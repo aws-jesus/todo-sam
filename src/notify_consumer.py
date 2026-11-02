@@ -10,10 +10,6 @@ def handler(event, context):
             evt = json.loads(record["body"])
             todo = evt["data"]
 
-            # Mensaje "venenoso" simulado para practicar reintentos y DLQ
-            if "#fail" in todo["title"]:
-                raise ValueError("fallo simulado: el titulo contiene #fail")
-
             print(f'[NOTIFICACION] Completado: "{todo["title"]}" ({todo["id"]})')
         except Exception as exc:
             print(f'[ERROR] mensaje {record["messageId"]} intento {attempt}: {exc}')
