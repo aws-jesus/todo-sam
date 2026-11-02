@@ -1,0 +1,7 @@
+.aws-sam/
+body*.json
+vacio.json
+malo.json
+b*.json
+bad*.json
+vars.ps1
